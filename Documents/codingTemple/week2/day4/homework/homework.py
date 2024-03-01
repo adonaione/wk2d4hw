@@ -14,20 +14,32 @@ def show_dict():
     print("Thank you for contributing to Adonai's Address Book!\nHere is what you've added this time:")
     for key in d1:
         print(f'{name}: {address}')
-# ask the user what they would like to do and loop back to question
+    # ask the user what they would like to do and loop back to question
 while True: 
     option = input("What would you like to do? Add/Quit ")
-    if option == "Add":
+    # if add option
+    if option == "Add" or option == "add":
+        #add name & address
         name = input("Enter Name: ")
         address = input("Enter {name}'s Address: ")
         d1[name] = address
-    elif option == "Quit":
-        if not d1:
-            print("You never even used my Adress Book bro...")
-        else:
-            show_dict()
-    break
-#not sure why 
+        # if quit option
+    elif option == "Quit" or option == "quit":
+        print("ok")
+        #solve error or show updates
+        break
+        
+if not d1:
+    print("You never even used my Adress Book bro...")
+else: 
+    print(show_dict())
+#         if not d1:
+#             print("You never even used my Adress Book bro...")
+#         else:
+#             print(show_dict())
+    
+            
+
 
 
 
@@ -37,10 +49,20 @@ person3 = {'09:00', '09:30', '11:00', '11:30', '12:00', '13:30', '14:30', '15:00
 person4 = {'11:00', '11:30', '12:00', '14:00', '14:30', '16:30', '17:00'}
 # Available Times: '12:00' and '14:30'
 
-avail_time: []
     
 def sim_time(*people):
-    while element in *people:
-        for time in *people:
-            i == i
-            avail_time.append()
+    #empty set
+    empty_set = set()
+    # looping through index of people for length of tuple  
+    for index in range(len(people)):
+        # index is the first 
+        if index == 0:
+            #add to set as base comparison
+            empty_set = people[index]
+        # otherwise
+        else:
+            #compare our set with the rest of set
+            empty_set = empty_set & people[index]
+    return empty_set
+            
+print(sim_time(person1, person2, person3, person4))
